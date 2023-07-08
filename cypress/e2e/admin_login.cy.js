@@ -6,13 +6,13 @@ describe("admin login", () => {
     cy.visit("http://qamid.tmweb.ru/admin");
   });
 
-  it.only("Should successfully login", () => {
-    cy.login(data[0].email,data[0].password);
+  it("Should successfully login", () => {
+    cy.login(data.email,data.password);
     cy.contains("Управление залами").should("be.visible");
   });
 
   it('Should show error with empty login', () => {
-    cy.login(data[1].email,data[1].password);
+    cy.login("", data.password);
     cy.get(login.email).then((el) => {
       expect(el[0].checkValidity()).to.be.false
       expect(el[0].validationMessage).to.be.eql('Заполните это поле.')
@@ -20,7 +20,7 @@ describe("admin login", () => {
   })
 
   it('Should show error with empty password', () => {
-    cy.login(data[2].email,data[2].password);
+    cy.login(data.email, "");
 
     cy.get(login.password).then((el) => {
       expect(el[0].checkValidity()).to.be.false

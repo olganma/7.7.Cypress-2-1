@@ -4,6 +4,5 @@
 "adminMovie": ".conf-step__seances-movie-title",
 "bookMovie": ".movie__title",
 "time": "a.movie-seances__time",
-"seat": ".buying-scheme__wrapper > :nth-child(9) > :nth-child(6)",
-"qr": ".ticket__info-qr"
+"seat": ".buying-scheme__wrapper > :nth-child(10) > :nth-child(6)"
 }
